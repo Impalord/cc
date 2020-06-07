@@ -14,7 +14,7 @@ client.on('connect', function () {
 var client3 = mqtt.connect('mqtt://test.mosquitto.org')
 client.on('connect', function () {
     setInterval(function () {
-        const l = 10;
+        const l = 1000;
         client.publish('now3', l.toString())
     }, 1000)
 })

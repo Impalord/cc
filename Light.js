@@ -6,13 +6,12 @@ client.on('connect', function() {
 })
 client.on('message', function (topic, message){
     var l = message;
-    if (l < 20){
+    if (l < 900){
         l++
         console.log('Current Lumi: ' + l.toString());
         console.log('Light Activated')
     }
-    else if (l >= 20){
+    else if (l >= 900){
         console.log('Light Off')
     }
-    console.log('Current Lumi: ' + l.toString())}
-)
+})
