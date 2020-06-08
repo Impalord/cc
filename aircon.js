@@ -9,19 +9,17 @@ client.on('message', function (topic, message) {
     var t = message;
     if (t < 10){
         console.log('Air Condition Activated')
-        t++;
         if( t = 10){
+            console.log('Current Temparature'  + t.toString())
             console.log('Air Condition Off')
         }
     }
     else if ( t > 25){
+        console.log('Current Temparature'  + t.toString())
         console.log('Air Condition Activated')
-        t--;
-        if( t = 25){
-            console.log('Air Condition Off')
-        }
     }
     else{
+        console.log('Current Temparature'  + t.toString())
         console.log(' Air Condition Not Needed')
     }
 })

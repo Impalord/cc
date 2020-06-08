@@ -13,14 +13,14 @@ message) {setInterval(function(){
     client.publish('water', humidity.toString())
 })
 })
-client2.on('message', function (topic,
-                               message) {setInterval(function(){
+client2.on('message', function (topic, message) {
+    setInterval(function(){
     var temparature = message;
     client.publish('AirCon', temparature.toString())
 })
 })
-client3.on('message', function (topic,
-                               message) {setInterval(function(){
+client3.on('message', function (topic, message) {
+    setInterval(function(){
     var ilu = message;
     client.publish('Light', ilu.toString())
 })
