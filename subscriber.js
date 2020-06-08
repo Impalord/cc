@@ -3,9 +3,9 @@ var client = mqtt.connect('mqtt://test.mosquitto.org')
 var client2 = mqtt.connect('mqtt://test.mosquitto.org')
 var client3 = mqtt.connect('mqtt://test.mosquitto.org')
 client.on('connect', function () {
-client.subscribe('now');
-client2.subscribe('now2');
-client3.subscribe('now3');
+client.subscribe('water');
+client2.subscribe('Aircon');
+client3.subscribe('Light');
 })
 client.on('message', function (topic,
 message) {setInterval(function(){
@@ -15,13 +15,13 @@ message) {setInterval(function(){
 })
 client2.on('message', function (topic, message) {
     setInterval(function(){
-    var temparature = message;
-    client.publish('AirCon', temparature.toString())
+    var temperature = message;
+    client.publish('AirCon', temperature.toString())
 })
 })
 client3.on('message', function (topic, message) {
     setInterval(function(){
-    var ilu = message;
-    client.publish('Light', ilu.toString())
+    var luminosity = message;
+    client.publish('Light',luminosity.toString())
 })
 })
